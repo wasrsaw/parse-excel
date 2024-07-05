@@ -4,11 +4,11 @@ import json
 
 """
 Здесь основной функционал, мы парсим excel файл.
-
 """
 #TODO: Рефакторинг
 
-ws = openpyxl.load_workbook("/Users/ilyabarinov/Downloads/Telegram Desktop/2024spr2p.xlsx").active
+PATH = "/"
+ws = openpyxl.load_workbook(PATH).active
 
 groups = {}
 max_column = ws.max_column

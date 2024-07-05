@@ -4,19 +4,19 @@
             "Para 1": [
                 {
                     "lesson": "Мет.и ст.прогр.(2пг)",
-                    "prepod": "Смирнов"
+                    "prep": "Смирнов"
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Физ-ра",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "Мет.и ст.прогр.(1пг)",
-                    "prepod": "Черноусов"
+                    "prep": "Черноусов"
                 }
             ],
             "Para 4": [],
@@ -27,31 +27,31 @@
             "Para 1": [
                 {
                     "lesson": "Алг. и геометрия",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Ин. язык (1пг)\nИн. язык (2пг)",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "Алг. и геометрия лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "Осн. росс. госуд.",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "IIн Осн. росс. госуд. лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 6": []
@@ -60,19 +60,19 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Прогр. в ЗРЛ (1пг)",
-                    "prepod": "Качалов"
+                    "prep": "Качалов"
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "IIн Прогр. в ЗРЛ лк",
-                    "prepod": "Качалов"
+                    "prep": "Качалов"
                 }
             ],
             "Para 4": [],
@@ -83,26 +83,26 @@
             "Para 1": [
                 {
                     "lesson": "Дискр. математика",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Мет. мат. анализа",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "Мат. анализ лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 4": [],
             "Para 5": [
                 {
                     "lesson": "Арх. компьютеров",
-                    "prepod": "Пистун"
+                    "prep": "Пистун"
                 }
             ],
             "Para 6": []
@@ -111,31 +111,31 @@
             "Para 1": [
                 {
                     "lesson": "Мат. анализ",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Дискр. математика лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "Мет. мат. анализа лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "История России",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "История России лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 6": []
@@ -144,26 +144,26 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Iн Мет.и ст.прогр. лк\nIIн Прогр. в ЗРЛ (2пг)",
-                    "prepod": "Кочерова\nМеретукова"
+                    "prep": "Кочерова\nМеретукова"
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "Iн Прогр. в ЗРЛ (2пг)",
-                    "prepod": "Меретукова"
+                    "prep": "Меретукова"
                 }
             ],
             "Para 4": [],
             "Para 5": [
                 {
                     "lesson": "1 курс",
-                    "prepod": null
+                    "prep": null
                 }
             ]
         }
@@ -173,13 +173,13 @@
             "Para 1": [
                 {
                     "lesson": "Физ-ра",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "История России",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 3": [],
@@ -191,41 +191,41 @@
             "Para 1": [
                 {
                     "lesson": "Мет. мат. анализа",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Ин. язык (1пг)\nИн. язык (2пг)",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "Алгебра и геометрия лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "Алгебра и геометрия",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "Iн Мет.и ст.прогр. (2пг)",
-                    "prepod": "Одегов"
+                    "prep": "Одегов"
                 },
                 {
                     "lesson": "IIн Осн. росс. госуд.",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 6": [
                 {
                     "lesson": "IIн Мет.и ст.прогр. (2пг)",
-                    "prepod": "Одегов"
+                    "prep": "Одегов"
                 }
             ]
         },
@@ -233,26 +233,26 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
             "Para 3": [
                 {
                     "lesson": "IIн Прогр. в ЗРЛ лк",
-                    "prepod": "Качалов"
+                    "prep": "Качалов"
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "Прогр. в ЗРЛ (1пг)",
-                    "prepod": "Качалов"
+                    "prep": "Качалов"
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "Мет.и ст.прогр. (1пг)",
-                    "prepod": "Шульгина"
+                    "prep": "Шульгина"
                 }
             ],
             "Para 6": []
@@ -261,26 +261,26 @@
             "Para 1": [
                 {
                     "lesson": "Дискр. математика",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Мет. мат. анализа",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "Мат. анализ лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 4": [],
             "Para 5": [
                 {
                     "lesson": "Арх. компьютеров",
-                    "prepod": "Пистун"
+                    "prep": "Пистун"
                 }
             ],
             "Para 6": []
@@ -289,31 +289,31 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Дискр. математика лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "Мет. мат. анализа лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "Осн. росс. госуд.",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "История России лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 6": []
@@ -322,13 +322,13 @@
             "Para 1": [
                 {
                     "lesson": "Прогр. в ЗРЛ (2пг)",
-                    "prepod": "Меретукова"
+                    "prep": "Меретукова"
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Iн Мет.и ст.прогр. лк",
-                    "prepod": "Кочерова"
+                    "prep": "Кочерова"
                 }
             ],
             "Para 3": [],
@@ -341,37 +341,37 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Прикл. прогр.",
-                    "prepod": "Дрейфельд\nСмирнов"
+                    "prep": "Дрейфельд\nСмирнов"
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "Компл. анализ лк ",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "Дифф. уравнения лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "IIн Прикл. прогр.",
-                    "prepod": "*"
+                    "prep": "*"
                 }
             ],
             "Para 6": [
                 {
                     "lesson": "Iн ТСПП\nIIн ТСПП лк",
-                    "prepod": "Абрамов\nАбрамов"
+                    "prep": "Абрамов\nАбрамов"
                 }
             ]
         },
@@ -379,26 +379,26 @@
             "Para 1": [
                 {
                     "lesson": "Iн Экон. культура ",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Алг. и геометрия",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 3": [],
             "Para 4": [
                 {
                     "lesson": "Iн Экон. культура\nIIн Большие данные",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "IIн Большие данные",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 6": []
@@ -407,7 +407,7 @@
             "Para 1": [
                 {
                     "lesson": "IIн ТСПП",
-                    "prepod": "Качалов"
+                    "prep": "Качалов"
                 }
             ],
             "Para 2": [],
@@ -420,25 +420,25 @@
             "Para 1": [
                 {
                     "lesson": "Компл. анализ",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Компл. анализ",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "Компл. анализ лк ",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "Алг. и геометрия лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 5": [],
@@ -448,20 +448,20 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
             "Para 3": [
                 {
                     "lesson": "IIн Базы данных",
-                    "prepod": "Патрикеева"
+                    "prep": "Патрикеева"
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "Дифф. уравнения",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 5": [],
@@ -471,47 +471,47 @@
             "Para 1": [
                 {
                     "lesson": "3,7,11,15 н. Базы данных",
-                    "prepod": "Егарева"
+                    "prep": "Егарева"
                 },
                 {
                     "lesson": "2,4,6,8 н. Базы данных",
-                    "prepod": "Егарева"
+                    "prep": "Егарева"
                 },
                 {
                     "lesson": "4,8,12,16 н. Философия",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "3,7,11,15 н. Базы данных",
-                    "prepod": "Егарева"
+                    "prep": "Егарева"
                 },
                 {
                     "lesson": "2,4,6,8 н. Базы данных",
-                    "prepod": "Егарева"
+                    "prep": "Егарева"
                 },
                 {
                     "lesson": "4,8,12,16 н. Философия",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "1,5,9,13 н. Философия лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "1,5,9,13 н. Философия лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "2 курс",
-                    "prepod": null
+                    "prep": null
                 }
             ]
         }
@@ -521,37 +521,37 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Прикл. прогр.",
-                    "prepod": "Дрейфельд\nСмирнов"
+                    "prep": "Дрейфельд\nСмирнов"
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "Компл. анализ лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "Дифф. уравнения лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "Iн ТСПП\nIIн Прикл. прогр.",
-                    "prepod": "Абрамов\n*"
+                    "prep": "Абрамов\n*"
                 }
             ],
             "Para 6": [
                 {
                     "lesson": "IIн ТСПП лк",
-                    "prepod": null
+                    "prep": null
                 }
             ]
         },
@@ -559,25 +559,25 @@
             "Para 1": [
                 {
                     "lesson": "Дифф. уравнения",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Iн Экон. культура\nIIн Большие данные",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "Алг. и геометрия",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "Iн Экон. культура\nIIн Большие данные",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 5": [],
@@ -587,14 +587,14 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
             "Para 3": [
                 {
                     "lesson": "Iн ТСПП",
-                    "prepod": "Качалов"
+                    "prep": "Качалов"
                 }
             ],
             "Para 4": [],
@@ -605,20 +605,20 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
             "Para 3": [
                 {
                     "lesson": "Компл. анализ лк ",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "Алг. и геометрия лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 5": [],
@@ -628,20 +628,20 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
             "Para 3": [
                 {
                     "lesson": "Компл. анализ",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "Компл. анализ",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 5": [],
@@ -651,49 +651,49 @@
             "Para 1": [
                 {
                     "lesson": "3,7,11,15 н. Базы данных",
-                    "prepod": "Егарева"
+                    "prep": "Егарева"
                 },
                 {
                     "lesson": "2,4,6,8 н. Базы данных",
-                    "prepod": "Егарева"
+                    "prep": "Егарева"
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "3,7,11,15 н. Базы данных",
-                    "prepod": "Егарева"
+                    "prep": "Егарева"
                 },
                 {
                     "lesson": "2,4,6,8 н. Базы данных",
-                    "prepod": "Егарева"
+                    "prep": "Егарева"
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "1,5,9,13 н. Философия лк",
-                    "prepod": null
+                    "prep": null
                 },
                 {
                     "lesson": "3,7,11,15 н. Базы данных",
-                    "prepod": "Егарева"
+                    "prep": "Егарева"
                 },
                 {
                     "lesson": "4,8,12,16 н. Философия",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "1,5,9,13 н. Философия лк",
-                    "prepod": null
+                    "prep": null
                 },
                 {
                     "lesson": "3,7,11,15 н. Базы данных",
-                    "prepod": "Егарева"
+                    "prep": "Егарева"
                 },
                 {
                     "lesson": "4,8,12,16 н. Философия",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 5": []
@@ -704,36 +704,36 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
             "Para 3": [
                 {
                     "lesson": "Ан. и проект. ИС",
-                    "prepod": "Волков"
+                    "prep": "Волков"
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "Ан. и проект. ИС лк",
-                    "prepod": "Завьялов"
+                    "prep": "Завьялов"
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "Iн Числ. методы лк",
-                    "prepod": "Кирсанов"
+                    "prep": "Кирсанов"
                 },
                 {
                     "lesson": "IIн Числ. методы",
-                    "prepod": "Кирсанов"
+                    "prep": "Кирсанов"
                 }
             ],
             "Para 6": [
                 {
                     "lesson": "Числ. методы",
-                    "prepod": "Кирсанов"
+                    "prep": "Кирсанов"
                 }
             ]
         },
@@ -741,7 +741,7 @@
             "Para 1": [
                 {
                     "lesson": "Спецрасписание",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -751,7 +751,7 @@
             "Para 6": [
                 {
                     "lesson": "Iн  БЖД лк\nIIн Осн.антик.деят. лк",
-                    "prepod": null
+                    "prep": null
                 }
             ]
         },
@@ -759,31 +759,31 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "ТВ и МС лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "IIн Мат. мет. мех. лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "Мат. мет. мех.",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "ТВ и МС",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 6": []
@@ -792,7 +792,7 @@
             "Para 1": [
                 {
                     "lesson": "Произв. обучение",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -805,25 +805,25 @@
             "Para 1": [
                 {
                     "lesson": "Комп. сети",
-                    "prepod": "Власов"
+                    "prep": "Власов"
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Функц. анализ ",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "Функц. анализ лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "Мет. моделир. РЛС",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 5": [],
@@ -833,7 +833,7 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -842,7 +842,7 @@
             "Para 5": [
                 {
                     "lesson": "3 курс",
-                    "prepod": null
+                    "prep": null
                 }
             ]
         }
@@ -852,36 +852,36 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
             "Para 3": [
                 {
                     "lesson": "Ан. и проект. ИС",
-                    "prepod": "Патрикеева"
+                    "prep": "Патрикеева"
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "Ан. и проект. ИС лк",
-                    "prepod": "Завьялов"
+                    "prep": "Завьялов"
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "Iн Числ. методы лк",
-                    "prepod": "Кирсанов"
+                    "prep": "Кирсанов"
                 },
                 {
                     "lesson": "IIн Числ. методы",
-                    "prepod": "Кирсанов"
+                    "prep": "Кирсанов"
                 }
             ],
             "Para 6": [
                 {
                     "lesson": "Числ. методы",
-                    "prepod": "Кирсанов"
+                    "prep": "Кирсанов"
                 }
             ]
         },
@@ -889,7 +889,7 @@
             "Para 1": [
                 {
                     "lesson": "Спецрасписание",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -899,7 +899,7 @@
             "Para 6": [
                 {
                     "lesson": "Iн  БЖД лк\nIIн Осн.антик.деят. лк",
-                    "prepod": null
+                    "prep": null
                 }
             ]
         },
@@ -907,31 +907,31 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "ТВ и МС лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "IIн Мат. мет. мех. лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "ТВ и МС",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "Мат. мет. мех.",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 6": []
@@ -940,7 +940,7 @@
             "Para 1": [
                 {
                     "lesson": "Произв. обучение",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -953,25 +953,25 @@
             "Para 1": [
                 {
                     "lesson": "Комп. сети",
-                    "prepod": "Власов"
+                    "prep": "Власов"
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Функц. анализ ",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "Функц. анализ лк",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "Мет. моделир. РЛС",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 5": [],
@@ -981,7 +981,7 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -995,7 +995,7 @@
             "Para 1": [
                 {
                     "lesson": "Произв. обучение",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -1008,25 +1008,25 @@
             "Para 1": [
                 {
                     "lesson": "САПР",
-                    "prepod": "Коновалова\nОдегов"
+                    "prep": "Коновалова\nОдегов"
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "САПР",
-                    "prepod": "Коновалова\nОдегов"
+                    "prep": "Коновалова\nОдегов"
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "САПР",
-                    "prepod": "Коновалова\nОдегов"
+                    "prep": "Коновалова\nОдегов"
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "САПР",
-                    "prepod": "Коновалова\nОдегов"
+                    "prep": "Коновалова\nОдегов"
                 }
             ],
             "Para 5": [],
@@ -1036,7 +1036,7 @@
             "Para 1": [
                 {
                     "lesson": "Произв. обучение",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -1049,7 +1049,7 @@
             "Para 1": [
                 {
                     "lesson": "Спецрасписание",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -1062,31 +1062,31 @@
             "Para 1": [
                 {
                     "lesson": "ОСРВ",
-                    "prepod": "Борисов"
+                    "prep": "Борисов"
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Проект. трансл.",
-                    "prepod": "Волков\nАрхипов"
+                    "prep": "Волков\nАрхипов"
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "Проект. трансл.",
-                    "prepod": "Волков\nАрхипов"
+                    "prep": "Волков\nАрхипов"
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "ОСРВ",
-                    "prepod": "Борисов"
+                    "prep": "Борисов"
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "ОСРВ",
-                    "prepod": "Борисов"
+                    "prep": "Борисов"
                 }
             ],
             "Para 6": []
@@ -1095,7 +1095,7 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -1104,7 +1104,7 @@
             "Para 5": [
                 {
                     "lesson": "4 курс",
-                    "prepod": null
+                    "prep": null
                 }
             ]
         }
@@ -1114,7 +1114,7 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -1122,19 +1122,19 @@
             "Para 4": [
                 {
                     "lesson": "Iн Админ. Linux и CI",
-                    "prepod": "Черноусов"
+                    "prep": "Черноусов"
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "IIн Админ. Linux и CI",
-                    "prepod": "Абрамов"
+                    "prep": "Абрамов"
                 }
             ],
             "Para 6": [
                 {
                     "lesson": "Iн 6-7п Функц. прогр.\nIIн 6п Функц. прогр.",
-                    "prepod": "Милонов"
+                    "prep": "Милонов"
                 }
             ]
         },
@@ -1142,7 +1142,7 @@
             "Para 1": [
                 {
                     "lesson": "Произв. обучение",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -1155,32 +1155,32 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Ос-ти ММ в разл. ОС",
-                    "prepod": "Жуков"
+                    "prep": "Жуков"
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "Спец. методы мод.",
-                    "prepod": "Лобузов"
+                    "prep": "Лобузов"
                 }
             ],
             "Para 4": [],
             "Para 5": [
                 {
                     "lesson": "Методы кодирования",
-                    "prepod": "Зайцев"
+                    "prep": "Зайцев"
                 }
             ],
             "Para 6": [
                 {
                     "lesson": "Iн Спец. методы мод.",
-                    "prepod": "Лобузов"
+                    "prep": "Лобузов"
                 }
             ]
         },
@@ -1188,7 +1188,7 @@
             "Para 1": [
                 {
                     "lesson": "Спецрасписание",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -1201,49 +1201,49 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [
                 {
                     "lesson": "Iн Мат. мод. механики",
-                    "prepod": "Булычев"
+                    "prep": "Булычев"
                 }
             ],
             "Para 3": [
                 {
                     "lesson": "Iн Мат. мод. механики",
-                    "prepod": "Булычев"
+                    "prep": "Булычев"
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "Iн Мат .мод. механики",
-                    "prepod": "Булычев"
+                    "prep": "Булычев"
                 },
                 {
                     "lesson": "IIн Мет. кодирования",
-                    "prepod": "Зайцев"
+                    "prep": "Зайцев"
                 },
                 {
                     "lesson": "I,IIн Обработка РЛИ",
-                    "prepod": "Манаков"
+                    "prep": "Манаков"
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "Прогр. пар. вычисл.",
-                    "prepod": "Власов"
+                    "prep": "Власов"
                 }
             ],
             "Para 6": [
                 {
                     "lesson": "Iн 6п Интелл. СУ",
-                    "prepod": "Липатов"
+                    "prep": "Липатов"
                 },
                 {
                     "lesson": "IIн 6-7п Интелл. СУ",
-                    "prepod": null
+                    "prep": null
                 }
             ]
         },
@@ -1251,7 +1251,7 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -1260,7 +1260,7 @@
             "Para 5": [
                 {
                     "lesson": "магистры 1 курс",
-                    "prepod": null
+                    "prep": null
                 }
             ]
         }
@@ -1270,7 +1270,7 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -1278,13 +1278,13 @@
             "Para 4": [
                 {
                     "lesson": "Техн.личн.роста",
-                    "prepod": "Завьялов"
+                    "prep": "Завьялов"
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "Техн.личн.роста",
-                    "prepod": "Завьялов"
+                    "prep": "Завьялов"
                 }
             ],
             "Para 6": []
@@ -1293,7 +1293,7 @@
             "Para 1": [
                 {
                     "lesson": "Произв. обучение",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -1306,7 +1306,7 @@
             "Para 1": [
                 {
                     "lesson": "Произв. обучение",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -1319,7 +1319,7 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -1327,13 +1327,13 @@
             "Para 4": [
                 {
                     "lesson": "СП ПМИ",
-                    "prepod": "Лебо"
+                    "prep": "Лебо"
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "СП ПМИ",
-                    "prepod": "Лебо"
+                    "prep": "Лебо"
                 }
             ],
             "Para 6": []
@@ -1342,7 +1342,7 @@
             "Para 1": [
                 {
                     "lesson": "Произв. обучение",
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
@@ -1355,26 +1355,26 @@
             "Para 1": [
                 {
                     "lesson": null,
-                    "prepod": null
+                    "prep": null
                 }
             ],
             "Para 2": [],
             "Para 3": [
                 {
                     "lesson": "Гибкое упр. пр. ",
-                    "prepod": "Лесин"
+                    "prep": "Лесин"
                 }
             ],
             "Para 4": [
                 {
                     "lesson": "Гибкое упр. пр. ",
-                    "prepod": "Лесин"
+                    "prep": "Лесин"
                 }
             ],
             "Para 5": [
                 {
                     "lesson": "магистры 2 курс",
-                    "prepod": null
+                    "prep": null
                 }
             ]
         }

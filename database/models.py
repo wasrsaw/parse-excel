@@ -1,3 +1,7 @@
+"""
+Здесь инициализируем модель БД
+"""
+
 from sqlalchemy import Column, Integer, String, Sequence, ForeignKey, create_engine
 from sqlalchemy.orm import Mapped
 from sqlalchemy.ext.declarative import declarative_base
@@ -5,7 +9,6 @@ from os import getenv
 import os
 from dotenv import load_dotenv
 
-# Загрузка переменных окружения из файла .env
 load_dotenv()
 
 DB_NAME = os.getenv("DB_NAME")
@@ -26,6 +29,3 @@ class Prep(Base):
     __tablename__ = 'Prep'
 
     id = Column(Integer, primary_key=True)
-
-engine = create_engine(f'postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/teeest')
-Base.metadata.create_all(engine)
