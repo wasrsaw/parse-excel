@@ -1,0 +1,18 @@
+services:
+  database:
+    container_name: database
+    build: .
+    image: postgres:22
+    volumes:
+      - database:/usr/src/data/database
+    command: "python database/models.py"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - ${DB_PORT}
+volumes:
+  database:
