@@ -11,7 +11,7 @@ class XParser:
     parity = ["IIн", "Iн"]
 
     def __init__(self, path: str) -> None:
-        self.PATH_ = path
+        self._PATH = path
 
     def get_weeks(self, input: str) -> list[str]:
         try:
@@ -51,7 +51,7 @@ class XParser:
         """
         Парсим данные
         """
-        ws = openpyxl.load_workbook(self.PATH_, read_only=True).active
+        ws = openpyxl.load_workbook(self._PATH, read_only=True).active
 
         #------------------Определяем границы расписания------------------
         min_col = ws.min_column
@@ -91,14 +91,14 @@ class XParser:
                                 weeks = self.get_weeks(lesson_cell)
                                 parity = self.get_week_parity(lesson_cell)
 
-                                data = {
+                                payload = {
                                         "Пара": lesson, 
                                         "Преподаватель": prep,
                                         "Подгруппа": subgroup,
                                         "Недели": weeks,
                                         "Четность": parity,
                                         }
-                                weekday_paras[weekday][order-1].append(data)
+                                weekday_paras[weekday][order-1].append(payload)
                                 
                 groups[group] = weekday_paras              
         return groups

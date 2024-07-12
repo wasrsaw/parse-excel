@@ -1,7 +1,7 @@
 from app.parser_class import XParser
 import json
 
-PATH = "/Users/ilyabarinov/Downloads/Telegram Desktop/2024spr2p.xlsx"
+PATH = ""
 
 parser = XParser(PATH)
 
