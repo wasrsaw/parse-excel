@@ -3,6 +3,26 @@ import openpyxl
 """
 Здесь основной функционал, мы парсим excel файл.
 """
+class ParsedData:
+    def txt_format(self):
+        """
+        В формате текста
+        """
+        pass
+
+    def dict_format(self):
+        """
+        В формате словаря
+        """
+        pass
+
+    def list_formt(self):
+        """
+        В формате списка
+        """
+        pass
+
+
 class XParser:
     group_row = 2
     weekday_col = 1
@@ -10,8 +30,11 @@ class XParser:
     subgroups = ["1пг", "2пг"]
     parity = ["IIн", "Iн"]
 
-    def __init__(self, path: str) -> None:
-        self._PATH = path
+    def __init__(self, file = None) -> None:
+        """
+        file - либо путь к файлу в формате str, либо байтовое представление самого файл
+        """
+        self._FILE = file
 
     def get_weeks(self, input: str) -> list[str]:
         try:
@@ -51,8 +74,7 @@ class XParser:
         """
         Парсим данные
         """
-        ws = openpyxl.load_workbook(self._PATH, read_only=True).active
-
+        ws = openpyxl.load_workbook(filename=self._FILE, read_only=True).active
         #------------------Определяем границы расписания------------------
         min_col = ws.min_column
         min_row = ws.min_row
@@ -102,22 +124,3 @@ class XParser:
                                 
                 groups[group] = weekday_paras              
         return groups
-
-class ParsedData:
-    def txt_format(self):
-        """
-        В формате текста
-        """
-        pass
-
-    def dict_format(self):
-        """
-        В формате словаря
-        """
-        pass
-
-    def list_formt(self):
-        """
-        В формате списка
-        """
-        pass

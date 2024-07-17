@@ -12,48 +12,53 @@ load_dotenv()
 
 class  Database(BaseDatabase):
     def __init__(self) -> None:
+        """
+        Инициализирует БД. 
+        НЕ МЕНЯЙТЕ НАЗВАНИЕ СХЕМЫ public на другое!!!
+        """
+        self.DB_HOST = "database"
         self.DB_NAME = os.getenv("DB_NAME")
         self.DB_USER = os.getenv("DB_USER")
         self.DB_PASSWORD = os.getenv("DB_PASSWORD")
-        self.DB_HOST = os.getenv("DB_HOST")
-        self.DB_PORT = os.getenv("DB_PORT")
+        self.DB_PORT = os.getenv("DB_INTERNAL_PORT")
 
+        self.init_QUERY = """
+        CREATE SCHEMA IF NOT EXISTS public;
+
+        CREATE TABLE IF NOT EXISTS sc_groups (
+        id SERIAL PRIMARY KEY,
+        title TEXT NOT NULL
+        );
+
+        CREATE TABLE IF NOT EXISTS sc_prep (
+        id SERIAL PRIMARY KEY,
+        fio TEXT NOT NULL,
+        chair TEXT,
+        degree TEXT,
+        photo TEXT,
+        student_id INTEGER,
+        archive BOOL DEFAULT 'f'
+        );
+
+        CREATE TABLE IF NOT EXISTS sc_disc (
+        id SERIAL PRIMARY KEY,
+        title TEXT NOT NULL
+        );
+
+        CREATE TABLE IF NOT EXISTS sc_rasp (
+        id SERIAL PRIMARY KEY,
+        disc_id INTEGER REFERENCES sc_disc(id),    
+        prep_id INTEGER REFERENCES sc_prep(id),
+        weekday INTEGER,
+        week INTEGER,
+        lesson INTEGER,
+        group_id INTEGER REFERENCES sc_groups(id),
+        subgroup INTEGER
+        );
+        """
         try:
-            QUERY = """
-            CREATE TABLE sc_groups (
-            id SERIAL PRIMARY KEY,
-            title TEXT NOT NULL
-            );
-
-            CREATE TABLE sc_prep (
-            id SERIAL PRIMARY KEY,
-            fio TEXT NOT NULL,
-            chair TEXT,
-            degree TEXT,
-            photo TEXT,
-            student_id INTEGER,
-            archive BOOL DEFAULT 'f'
-            );
-
-            CREATE TABLE sc_disc (
-            id SERIAL PRIMARY KEY,
-            title TEXT NOT NULL
-            );
-
-            CREATE TABLE sc_rasp (
-            id SERIAL PRIMARY KEY,
-            disc_id INTEGER REFERENCES sc_disc(id),    
-            prep_id INTEGER REFERENCES sc_prep(id),
-            weekday INTEGER,
-            week INTEGER,
-            lesson INTEGER,
-            group_id INTEGER REFERENCES sc_group(id),
-            subgroup INTEGER
-            );
-            """
             conn, cur = self.set_conn()
-            cur.execute(QUERY)
-            
+            cur.execute(self.init_QUERY)
         except (Exception, psycopg2.Error) as error:
             print("PostgreSQL error occured", error)
         finally:
@@ -64,24 +69,25 @@ class  Database(BaseDatabase):
                 print("PostgreSQL connection is closed")
 
     def set_conn(self) -> tuple[connection, cursor]:
-        try:
-            conn = psycopg2.connect(
-                database=self.DB_NAME,
-                user=self.DB_USER,
-                host=self.DB_HOST,
-                port=self.DB_PORT,
-                password=self.DB_PASSWORD   
-            )
-            cur = conn.cursor()
-            return conn, cur
-        except Exception as e:
-            print(e)
-            return  None
-        
+        conn = psycopg2.connect(
+            database=self.DB_NAME,
+            user=self.DB_USER,
+            host=self.DB_HOST,
+            port=self.DB_PORT,
+            password=self.DB_PASSWORD   
+        )
+        cur = conn.cursor()
+        return conn, cur
+
     def reset_data(self):
+        """
+        Удаляет все записи в БД. 
+        НЕ МЕНЯЙТЕ НАЗВАНИЕ СХЕМЫ public на другое!!!
+        """
+        QUERY = "DROP SCHEMA public CASCADE;" + " " + self.init_QUERY
         try:
             conn, cur = self.set_conn()
-            cur.execute("")
+            cur.execute(QUERY)
         except (Exception, psycopg2.Error) as error:
             print("PostgreSQL error occured", error)
         finally:

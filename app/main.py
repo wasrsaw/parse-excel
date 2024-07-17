@@ -2,7 +2,7 @@ import uvicorn
 import os
 
 from fastapi import FastAPI
-from router.parser import router
+from services import router
 
 APP_HOST = os.getenv("APP_HOST")
 APP_PORT = int(os.getenv("APP_PORT"))

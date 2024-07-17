@@ -11,19 +11,28 @@ services:
     # network_mode: "host"
     ports:
       - ${APP_PORT}:${APP_PORT}
+    networks:
+      - parser-app
 
   database:
     container_name: database
-    image: postgres:15
+    image: postgres:13
     volumes:
-      # - ./initdb.sql:/docker-entrypoint-initdb.d
-      - database:/usr/src/data/database
-    command: "python database/models.py"
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     environment:
       POSTGRES_DB: ${DB_NAME}
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
+      PGPORT: ${DB_INTERNAL_PORT}
     ports:
-      - ${DB_INTERNAL_PORT}:${DB_PORT}
+      - ${DB_PORT}:${DB_INTERNAL_PORT}
+    networks:
+      - parser-app
+
 volumes:
   database:
+
+networks:
+  parser-app:
+    name: parser-app
+    driver: bridge
