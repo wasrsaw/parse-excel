@@ -22,7 +22,7 @@ async def schedule_parse(file: UploadFile = File(...)):
         return JSONResponse(content={"error": str(e)}, status_code=400)
 
 @router.post("/drop-database")
-async def schedule_parse():
+async def drop_database():
     try:
         db.reset_data()
         return {"status": "БД успешно сброшена"}
@@ -30,7 +30,7 @@ async def schedule_parse():
         return JSONResponse(content={"error": str(e)}, status_code=400)
 
 @router.post("/update-database")
-async def schedule_parse(file: UploadFile = File(...)):
+async def update_database(file: UploadFile = File(...)):
     try:
         schedule = await file.read()
         parser = XParser(BytesIO(schedule))

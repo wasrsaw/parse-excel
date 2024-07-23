@@ -89,11 +89,11 @@ class XParser:
             if group:  # Парсим по группам
                 weekday_paras = {}
 
-                for row0 in range(self.group_row+1, max_row):
+                for row0 in range(self.group_row+1, max_row-2):
                     weekday = ws.cell(row0, self.weekday_col).value
                     if weekday:  # Парсим по дню недели
                         weekday_paras[weekday] = []
-                        for row1 in range(row0, max_row): 
+                        for row1 in range(row0, max_row-2): 
                             check_day = ws.cell(row1, self.weekday_col).value
                             para_cell = ws.cell(row1, self.para_col).value
                             lesson_cell = ws.cell(row1, col).value
@@ -104,7 +104,6 @@ class XParser:
 
                             if para_cell:
                                 order = para_cell
-                                weekday_paras[weekday].append([])
 
                             if lesson_cell or prep_cell:
                                 lesson = lesson_cell
@@ -114,13 +113,14 @@ class XParser:
                                 parity = self.get_week_parity(lesson_cell)
 
                                 payload = {
+                                        "Порядок": order,
                                         "Пара": lesson, 
                                         "Преподаватель": prep,
                                         "Подгруппа": subgroup,
                                         "Недели": weeks,
                                         "Четность": parity,
                                         }
-                                weekday_paras[weekday][order-1].append(payload)
+                                weekday_paras[weekday].append(payload)
                                 
                 groups[group] = weekday_paras              
         return groups

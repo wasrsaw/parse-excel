@@ -60,6 +60,7 @@ class  Database(BaseDatabase):
             conn, cur = self.set_conn()
             cur.execute(self.init_QUERY)
         except (Exception, psycopg2.Error) as error:
+            conn = None
             print("PostgreSQL error occured", error)
         finally:
             if conn:
@@ -69,15 +70,19 @@ class  Database(BaseDatabase):
                 print("PostgreSQL connection is closed")
 
     def set_conn(self) -> tuple[connection, cursor]:
-        conn = psycopg2.connect(
-            database=self.DB_NAME,
-            user=self.DB_USER,
-            host=self.DB_HOST,
-            port=self.DB_PORT,
-            password=self.DB_PASSWORD   
-        )
-        cur = conn.cursor()
-        return conn, cur
+        try:
+            conn = psycopg2.connect(
+                database=self.DB_NAME,
+                user=self.DB_USER,
+                host=self.DB_HOST,
+                port=self.DB_PORT,
+                password=self.DB_PASSWORD   
+            )
+            cur = conn.cursor()
+        except:
+            conn, cur = (None, None)
+        finally:
+            return conn, cur
 
     def reset_data(self):
         """
