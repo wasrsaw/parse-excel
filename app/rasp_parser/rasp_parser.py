@@ -44,8 +44,6 @@ class XParser:
                 return text[0].split(",")
         except Exception:
             #add logs
-            pass
-        finally:
             return None
         
     def get_week_parity(self, input: str) -> str:
@@ -55,9 +53,7 @@ class XParser:
                     return i
         except TypeError:
             #add logs
-            pass
-        finally:
-            return None
+            return None            
         
     def get_subgroup(self, input: str) -> str:
         try:
@@ -66,8 +62,6 @@ class XParser:
                     return subgroup
         except TypeError:
             #add logs
-            pass
-        finally:
             return None
 
     def parse(self) -> dict:
@@ -89,9 +83,28 @@ class XParser:
             if group:  # Парсим по группам
                 weekday_paras = {}
 
+                # if group not in self._GROUPS:
+                #     self._GROUPS.append(group)
+
                 for row0 in range(self.group_row+1, max_row-2):
                     weekday = ws.cell(row0, self.weekday_col).value
                     if weekday:  # Парсим по дню недели
+                        if weekday == "ПН":
+                            weekday = "1"
+                        elif weekday == "ВТ":
+                            weekday = "2"
+                        elif weekday == "СР":
+                            weekday = "3"
+                        elif weekday == "ЧТ":
+                            weekday = "4"
+                        elif weekday == "ПТ":
+                            weekday = "5"
+                        elif weekday == "СБ":
+                            weekday = "6"
+                        elif weekday == "ВС": 
+                            weekday = "7"
+                        else:
+                            raise ValueError(f"Невозможно распарсить расписание, неизвестный день недели: {weekday}")
                         weekday_paras[weekday] = []
                         for row1 in range(row0, max_row-2): 
                             check_day = ws.cell(row1, self.weekday_col).value
@@ -124,3 +137,4 @@ class XParser:
                                 
                 groups[group] = weekday_paras              
         return groups
+

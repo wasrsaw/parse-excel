@@ -28,3 +28,10 @@ class BaseDatabase():
         Устанавливаем данные БД
         """
         pass
+
+    @abstractmethod
+    def get_data(self, query: str, *args):
+        """
+        Получаем данные БД
+        """
+        pass

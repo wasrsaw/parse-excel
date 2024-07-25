@@ -3,6 +3,7 @@
 """
 import os
 import psycopg2
+from typing import Any
 from psycopg2._psycopg import cursor, connection
 from dotenv import load_dotenv
 from .db_base_class import BaseDatabase
@@ -114,7 +115,21 @@ class  Database(BaseDatabase):
                 cur.close()
                 conn.close()
                 print("PostgreSQL connection is closed")
-
+            
+    def get_data(self, query: str, *args) -> Any:
+        try:
+            conn, cur = self.set_conn()
+            response = cur.execute(query, (args,))
+        except (Exception, psycopg2.Error) as error:
+            print("PostgreSQL error occured", error)
+            return None
+        finally:
+            if conn:
+                cur.close()
+                conn.close()
+                print("PostgreSQL connection is closed")
+                return response
+                
     def set_rasp(self, disc: str, prep: str, group: str, weekday: int, week: int = None, 
                  lesson: int = None, subgroup: int = None):
         QUERY = """
@@ -150,7 +165,7 @@ class  Database(BaseDatabase):
         """
         self.set_data(QUERY, title)
 
-    def set_disc(self, title: str):
+    def set_subj(self, title: str):
         QUERY = """
         INSERT INTO 
             sc_disc (title)
@@ -158,3 +173,5 @@ class  Database(BaseDatabase):
             (%s);
         """
         self.set_data(QUERY, title)
+
+    
