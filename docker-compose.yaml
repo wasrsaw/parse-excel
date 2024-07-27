@@ -6,6 +6,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./app:/usr/src/app
+      # - ./info.json:/usr/src/app/info.json
+      # - ./rasp.json:/usr/src/app/rasp.json
     env_file:
       - .env
     # network_mode: "host"

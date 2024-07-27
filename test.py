@@ -40,5 +40,5 @@ a = {
 # #     json.dump(parse, fp, ensure_ascii=False, indent=2)
 # #     # fp.write(js)
 
-a = ""
-print(a is "")
+a = "IIн Прогр. в ЗРЛ (2пг)"
+print(a.split("\n")[0])

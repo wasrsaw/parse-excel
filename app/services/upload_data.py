@@ -26,7 +26,7 @@ async def upload_preps(file: UploadFile = File(...)):
         return JSONResponse(content={"ERROR": str(e)}, status_code=400)
 
 
-@router.post("info-json")
+@router.post("/info-json")
 async def upload_preps(file: UploadFile = File(...)):
     """
     Обновления JSON с данными о преподавателях, предметах и группах

@@ -89,34 +89,18 @@ class XParser:
                 for row0 in range(self.group_row+1, max_row-2):
                     weekday = ws.cell(row0, self.weekday_col).value
                     if weekday:  # Парсим по дню недели
-                        if weekday == "ПН":
-                            weekday = "1"
-                        elif weekday == "ВТ":
-                            weekday = "2"
-                        elif weekday == "СР":
-                            weekday = "3"
-                        elif weekday == "ЧТ":
-                            weekday = "4"
-                        elif weekday == "ПТ":
-                            weekday = "5"
-                        elif weekday == "СБ":
-                            weekday = "6"
-                        elif weekday == "ВС": 
-                            weekday = "7"
-                        else:
-                            raise ValueError(f"Невозможно распарсить расписание, неизвестный день недели: {weekday}")
                         weekday_paras[weekday] = []
                         for row1 in range(row0, max_row-2): 
                             check_day = ws.cell(row1, self.weekday_col).value
-                            para_cell = ws.cell(row1, self.para_col).value
+                            order_cell = ws.cell(row1, self.para_col).value
                             lesson_cell = ws.cell(row1, col).value
                             prep_cell = ws.cell(row1, col+1).value
                             
                             if check_day and check_day != weekday:
                                 break
 
-                            if para_cell:
-                                order = para_cell
+                            if order_cell:
+                                order = order_cell
 
                             if lesson_cell or prep_cell:
                                 lesson = lesson_cell

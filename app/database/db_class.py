@@ -28,7 +28,7 @@ class  Database(BaseDatabase):
 
         CREATE TABLE IF NOT EXISTS sc_groups (
         id SERIAL PRIMARY KEY,
-        title TEXT NOT NULL
+        title TEXT UNIQUE
         );
 
         CREATE TABLE IF NOT EXISTS sc_prep (
@@ -43,7 +43,7 @@ class  Database(BaseDatabase):
 
         CREATE TABLE IF NOT EXISTS sc_disc (
         id SERIAL PRIMARY KEY,
-        title TEXT NOT NULL
+        title TEXT UNIQUE
         );
 
         CREATE TABLE IF NOT EXISTS sc_rasp (
@@ -106,7 +106,7 @@ class  Database(BaseDatabase):
     def set_data(self, query: str, *args):
         try:
             conn, cur = self.set_conn()
-            cur.execute(query, (args,))
+            cur.execute(query, (args))
         except (Exception, psycopg2.Error) as error:
             print("PostgreSQL error occured", error)
         finally:
@@ -119,10 +119,9 @@ class  Database(BaseDatabase):
     def get_data(self, query: str, *args) -> Any:
         try:
             conn, cur = self.set_conn()
-            response = cur.execute(query, (args,))
+            response = cur.execute(query, (args))
         except (Exception, psycopg2.Error) as error:
             print("PostgreSQL error occured", error)
-            return None
         finally:
             if conn:
                 cur.close()
@@ -136,12 +135,12 @@ class  Database(BaseDatabase):
         INSERT INTO 
             sc_rasp (disc_id, prep_id, weekday, week, lesson, group_id, subgroup)
         SELECT
-            (SELECT id FROM sc_disc WHERE disc.title = %s),
+            (SELECT id FROM sc_disc WHERE sc_disc.title = %s),
             (SELECT id FROM sc_prep WHERE sc_prep.fio = %s),
             %s, 
             %s, 
             %s,
-            (SELECT id FROM sc_group WHERE sc_group.title = %s),
+            (SELECT id FROM sc_groups WHERE sc_groups.title = %s),
             %s;
         """
         self.set_data(QUERY, disc, prep, weekday, week, lesson, group, subgroup)
@@ -159,7 +158,7 @@ class  Database(BaseDatabase):
     def set_group(self, title: str):
         QUERY = """
         INSERT INTO 
-            sc_group (title)
+            sc_groups (title)
         VALUES
             (%s);
         """

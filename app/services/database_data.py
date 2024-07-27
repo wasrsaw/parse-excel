@@ -3,6 +3,7 @@ from fastapi import APIRouter, File, UploadFile
 from fastapi.responses import JSONResponse
 from io import BytesIO
 
+import logging
 from utils.exceptions import *
 from rasp_parser.rasp_parser import XParser
 from database.db_class import Database
@@ -12,7 +13,7 @@ router = APIRouter(prefix="/database")
 
 db = Database()
 
-@router.get("/update")
+@router.get("/update-from-json")
 async def update_database():
     try:
         db.reset_data()
@@ -26,9 +27,8 @@ async def update_database():
             chair = prep["Должность"]
             degree = prep["Степень"]
             photo = prep["Фото"]
-            student_id = int(prep["Student_id"])
-            archive = bool(prep["Архив"])
-
+            student_id = 0 #int(prep["Student_id"])
+            archive = False #bool(prep["Архив"])
             db.set_prep(fio, chair, degree, photo, student_id, archive)
 
         for subj in info["Предметы"]:
@@ -42,43 +42,64 @@ async def update_database():
             rasp = json.load(rasp_file)
         
         for group in list(rasp):
-            if group in info["Группы"]:
-                db.set_group(group)
-            else:
-                raise GroupNotFound
+            if group not in info["Группы"]:
+                raise GroupNotFound(group)
             
             for weekday in rasp[group]:
                 for i in range(0, len(rasp[group][weekday])):
                     para = rasp[group][weekday][i]
-
-                    order = para["Порядок"]
-
                     # Проверка правильности названия предмета
-                    para = para["Пара"]
+                    lesson = para["Пара"]
                     for subj in info["Предметы"]:
-                        if subj in para:
-                            para = subj
-                    if para is None or para == "":
-                        raise SubjNotFound
-                        
+                        if subj.lower() in lesson.lower():
+                            lesson = subj
+                            break
+                    db.set_subj(lesson)
+                    
                     # Проверка правильности фамилии преподавателя
                     prep = para["Преподаватель"] 
-                    for prep_info in info["Преподаватели"]:
-                        if prep in prep_info["ФИО"]:
-                            prep = prep_info["ФИО"]
-
+                    if prep is None:
+                        prep = "Не указан"
+                    else:
+                        for prep_info in info["Преподаватели"]:
+                            if prep in prep_info["ФИО"]:
+                                prep = prep_info["ФИО"]
+                                
+                    if weekday == "ПН":
+                        weekday_order = 1
+                    elif weekday == "ВТ":
+                        weekday_order = 2
+                    elif weekday == "СР":
+                        weekday_order = 3
+                    elif weekday == "ЧТ":
+                        weekday_order = 4
+                    elif weekday == "ПТ":
+                        weekday_order = 5
+                    elif weekday == "СБ":
+                        weekday_order = 6
+                    elif weekday == "ВС": 
+                        weekday_order = 7
+                    
+                    order = para["Порядок"]
                     subgroup = para["Подгруппа"]
                     weeks = para["Недели"]
                     parity = para["Четность"]
-                    weekday = int(weekday)
 
-                    db.set_rasp(para, prep, group, weekday)
+                    db.set_rasp(lesson, prep, group, weekday_order)
         return JSONResponse(content={"SUCCESS": "БД успешно обновлена"}, status_code=200)
     except Exception as e:
-        db.reset_data()
-        return JSONResponse(content={"ERRORR": str(e)}, status_code=400)
+        # db.reset_data()
+        return JSONResponse(content={"ERROR": str(e)}, status_code=400)
     
-@router.post("/drop")
+@router.get("/test")
+async def test():
+    try:
+        db.set_group("KOLOMNA")
+        return JSONResponse(content={"SUCCESS": "TEST Success"})
+    except Exception as e:
+        return JSONResponse(content={"ERRORR": str(e)}, status_code=400)
+
+@router.get("/drop")
 async def drop_database():
     try:
         db.reset_data()
