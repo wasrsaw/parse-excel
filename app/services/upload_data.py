@@ -1,15 +1,11 @@
+import json
 from fastapi import APIRouter, File, UploadFile
 from fastapi.responses import JSONResponse
 from io import BytesIO
-import json
-
 from rasp_parser.rasp_parser import XParser
-from database.db_class import Database
 
 
 router = APIRouter(prefix="/upload")
-
-db = Database()
 
 @router.post("/schedule-excel")
 async def upload_preps(file: UploadFile = File(...)):

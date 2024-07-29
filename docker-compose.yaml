@@ -10,7 +10,6 @@ services:
       # - ./rasp.json:/usr/src/app/rasp.json
     env_file:
       - .env
-    # network_mode: "host"
     ports:
       - ${APP_PORT}:${APP_PORT}
     networks:
