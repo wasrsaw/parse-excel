@@ -31,8 +31,8 @@ async def update_database():
             chair = prep["Должность"]
             degree = prep["Степень"]
             photo = prep["Фото"]
-            student_id = int(prep["Student_id"])
-            archive = prep["Архив"]
+            student_id = prep["Student_id"]
+            archive = "False"
             db.set_prep(fio, chair, degree, photo, student_id, archive)
 
         for subj in info["Предметы"]:
@@ -62,15 +62,17 @@ async def update_database():
                     db.set_subj(disc)
                     
                     # Проверка правильности фамилии преподавателя
-                    prep = None
+                    preps = []
                     if para["Преподаватель"] is None:
-                        prep = "Не указан"
+                        preps.append("Не указан")
                     else:
-                        for prep_info in info["Преподаватели"]:
-                            if para["Преподаватель"].lower() in prep_info["ФИО"].lower():
-                                prep = prep_info["ФИО"]
-                                break
-                    if prep is None:
+                        prep = para["Преподаватель"].split("\n")
+                        for fio in prep:
+                            for prep_info in info["Преподаватели"]:
+                                if fio.lower() in prep_info["ФИО"].lower():
+                                    preps.append(prep_info["ФИО"])
+                                    break
+                    if preps == []:
                         raise PrepNotFound(para["Преподаватель"])
                                 
                     if weekday == "ПН":
@@ -93,8 +95,9 @@ async def update_database():
                     lesson = para["Порядок"]
                     subgroup = para["Подгруппа"]
                     week = para["Четность"]
-
-                    db.set_rasp(disc, prep, group, weekday_order, week, lesson, subgroup)
+                    
+                    for prep in preps:
+                        db.set_rasp(disc, prep, group, weekday_order, week, lesson, subgroup)
         return JSONResponse(content={"SUCCESS": "БД успешно обновлена"}, status_code=200)
     except Exception as e:
         db.reset_data()
