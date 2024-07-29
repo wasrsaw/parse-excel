@@ -27,8 +27,6 @@ class XParser:
     group_row = 2
     weekday_col = 1
     para_col = 2
-    subgroups = ["1пг", "2пг"]
-    parity = ["IIн", "Iн"]
 
     def __init__(self, file = None) -> None:
         """
@@ -43,25 +41,24 @@ class XParser:
                 #проверяем его наличие
                 return text[0].split(",")
         except Exception:
-            #add logs
             return None
         
     def get_week_parity(self, input: str) -> str:
         try:
-            for i in self.parity:
-                if i in input:
-                    return i
+            if "IIн" in input:
+                return 2
+            elif "Iн" in input:
+                return 1
         except TypeError:
-            #add logs
             return None            
         
     def get_subgroup(self, input: str) -> str:
         try:
-            for subgroup in self.subgroups:
-                if subgroup in input:
-                    return subgroup
+            if "1пг" in input:
+                return 1
+            elif "2пг" in input:
+                return 2
         except TypeError:
-            #add logs
             return None
 
     def parse(self) -> dict:
@@ -82,9 +79,6 @@ class XParser:
             group = ws.cell(self.group_row, col).value
             if group:  # Парсим по группам
                 weekday_paras = {}
-
-                # if group not in self._GROUPS:
-                #     self._GROUPS.append(group)
 
                 for row0 in range(self.group_row+1, max_row-2):
                     weekday = ws.cell(row0, self.weekday_col).value

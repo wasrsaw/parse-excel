@@ -15,3 +15,9 @@ class SubjNotFound(Exception):
         self.subj = subj
         self.message = f'Предмет не найден в JSON файле: "{subj}"'
         super().__init__(self.message)
+
+class WeekdayNotFound(Exception):
+    def __init__(self, wkday:str = ""):
+        self.wkday = wkday
+        self.message = f'День недели не найден в JSON файле: "{wkday}"'
+        super().__init__(self.message)

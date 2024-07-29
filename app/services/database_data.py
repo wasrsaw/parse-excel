@@ -15,6 +15,10 @@ db = Database()
 
 @router.get("/update-from-json")
 async def update_database():
+    """
+    Обновляем информацию в БД из JSON файлов. 
+    Тут происходит распаковка распаршенных данных из JSON файла
+    """
     try:
         db.reset_data()
 
@@ -27,8 +31,8 @@ async def update_database():
             chair = prep["Должность"]
             degree = prep["Степень"]
             photo = prep["Фото"]
-            student_id = 0 #int(prep["Student_id"])
-            archive = False #bool(prep["Архив"])
+            student_id = int(prep["Student_id"])
+            archive = prep["Архив"]
             db.set_prep(fio, chair, degree, photo, student_id, archive)
 
         for subj in info["Предметы"]:
@@ -37,7 +41,7 @@ async def update_database():
         for group in info["Группы"]:
             db.set_group(group)
 
-        #-------------------- Распаковывем информацию с расписанием --------------------
+        #-------------------- Подгатавливаем информацию для заполнения БД --------------------
         with open("rasp.json", "r") as rasp_file:
             rasp = json.load(rasp_file)
         
@@ -48,22 +52,26 @@ async def update_database():
             for weekday in rasp[group]:
                 for i in range(0, len(rasp[group][weekday])):
                     para = rasp[group][weekday][i]
+
                     # Проверка правильности названия предмета
-                    lesson = para["Пара"]
+                    disc = para["Пара"]
                     for subj in info["Предметы"]:
-                        if subj.lower() in lesson.lower():
-                            lesson = subj
+                        if subj.lower() in disc.lower():
+                            disc = subj
                             break
-                    db.set_subj(lesson)
+                    db.set_subj(disc)
                     
                     # Проверка правильности фамилии преподавателя
-                    prep = para["Преподаватель"] 
-                    if prep is None:
+                    prep = None
+                    if para["Преподаватель"] is None:
                         prep = "Не указан"
                     else:
                         for prep_info in info["Преподаватели"]:
-                            if prep in prep_info["ФИО"]:
+                            if para["Преподаватель"].lower() in prep_info["ФИО"].lower():
                                 prep = prep_info["ФИО"]
+                                break
+                    if prep is None:
+                        raise PrepNotFound(para["Преподаватель"])
                                 
                     if weekday == "ПН":
                         weekday_order = 1
@@ -79,25 +87,18 @@ async def update_database():
                         weekday_order = 6
                     elif weekday == "ВС": 
                         weekday_order = 7
+                    else:
+                        raise WeekdayNotFound(weekday)
                     
-                    order = para["Порядок"]
+                    lesson = para["Порядок"]
                     subgroup = para["Подгруппа"]
-                    weeks = para["Недели"]
-                    parity = para["Четность"]
+                    week = para["Четность"]
 
-                    db.set_rasp(lesson, prep, group, weekday_order)
+                    db.set_rasp(disc, prep, group, weekday_order, week, lesson, subgroup)
         return JSONResponse(content={"SUCCESS": "БД успешно обновлена"}, status_code=200)
     except Exception as e:
-        # db.reset_data()
+        db.reset_data()
         return JSONResponse(content={"ERROR": str(e)}, status_code=400)
-    
-@router.get("/test")
-async def test():
-    try:
-        db.set_group("KOLOMNA")
-        return JSONResponse(content={"SUCCESS": "TEST Success"})
-    except Exception as e:
-        return JSONResponse(content={"ERRORR": str(e)}, status_code=400)
 
 @router.get("/drop")
 async def drop_database():

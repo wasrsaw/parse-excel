@@ -35,7 +35,7 @@ async def upload_preps(file: UploadFile = File(...)):
         preps = await file.read()
         f = open("info.json", "wb")
         f.write(preps)
-        return JSONResponse(content={"SUCCESS": "JSON список преподавателей успешно обновлен!"}, status_code=200)
+        return JSONResponse(content={"SUCCESS": "JSON с информацией успешно обновлен!"}, status_code=200)
     except Exception as e:
         return JSONResponse(content={"ERROR": str(e)}, status_code=400)
     
