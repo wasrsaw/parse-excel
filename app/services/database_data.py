@@ -28,7 +28,7 @@ async def update_database():
             degree = prep["Степень"]
             photo = prep["Фото"]
             student_id = prep["Student_id"]
-            archive = "False"
+            archive = prep["Архив"]
             db.set_prep(fio, chair, degree, photo, student_id, archive)
 
         for subj in info["Предметы"]:
