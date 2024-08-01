@@ -1,0 +1,39 @@
+services:
+  app:
+    container_name: app
+    build:
+      context: app
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/usr/src/app
+      # - ./info.json:/usr/src/app/info.json
+      # - ./rasp.json:/usr/src/app/rasp.json
+    env_file:
+      - .env
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    networks:
+      - parser-app
+
+  database:
+    container_name: database
+    image: postgres:13
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      PGPORT: ${DB_INTERNAL_PORT}
+    ports:
+      - ${DB_PORT}:${DB_INTERNAL_PORT}
+    networks:
+      - parser-app
+
+volumes:
+  database:
+
+networks:
+  parser-app:
+    name: parser-app
+    driver: bridge
