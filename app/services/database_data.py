@@ -103,6 +103,6 @@ async def update_database():
 async def drop_database():
     try:
         db.reset_data()
-        return {"status": "БД успешно сброшена"}
+        return JSONResponse(content={"SUCCESS": "БД успешно сброшена"}, status_code=200)
     except Exception as e:
         return JSONResponse(content={"ERROR": str(e)}, status_code=400)

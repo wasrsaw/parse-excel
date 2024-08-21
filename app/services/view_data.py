@@ -6,7 +6,7 @@ from rasp_parser.rasp_parser import XParser
 
 router = APIRouter(prefix="/view")
 
-@router.get("/schedule-excel")
+@router.post("/schedule-excel")
 async def schedule_parse(file: UploadFile = File(...)):
     """
     Просмотр распарсенного расписания в JSON формате

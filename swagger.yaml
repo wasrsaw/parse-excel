@@ -1,0 +1,207 @@
+openapi: 3.0.3
+info:
+  title: Schedule Parser - OpenAPI 3.0
+  description: |-
+    Парсер учебного расписания формата excel
+  version: 1.0.11
+servers:
+  - url: http://0.0.0.0:8087
+tags:
+  - name: view
+    description: Просмотр распарсенного расписания
+  - name: upload
+    description: Обновление данных по расписанию
+  - name: database
+    description: Работа с базой данных
+    
+paths:
+  /view/schedule-excel:
+    post:
+      tags:
+        - view
+      summary: Просмотр распарсенного расписания в JSON формате
+      description: Необходимо загрузить расписание в установленном формате excel
+      requestBody:
+        description: Входящий excel-файл с учебным расписанием
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/Timetable'    
+        '400':
+          description: Invalid status value
+          
+  /upload/schedule-excel:
+    post:
+      tags:
+        - upload
+      summary: Добавление расписания
+      description: Обновление JSON файла с распарсенным расписанием
+
+      requestBody:
+        description: Входящий excel-файл с учебным расписанием
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Success'
+        '400':
+          description: Invalid input
+
+
+  /upload/info-json:
+    post:
+      tags:
+        - upload
+      summary: Добавление дополнительной информации
+      description: Обновление JSON с данными о преподавателях, предметах и группах
+      
+      requestBody:
+        description: Входящий JSON с данными о преподавателях, предметах и группах
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Success'
+        '400':
+          description: Invalid input
+
+ 
+  /database/update-from-json:
+    get:
+      tags:
+        - database
+      summary: Обновление базы данных
+      description: База данных обновляется GET-запросом без параметров
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Success'
+
+        '400':
+          description: Invalid input
+          
+  /database/drop:
+    get:
+      tags:
+        - database
+      summary: Сброс базы данных
+      description: База данных сбрасывается GET-запросом без параметров
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Success'
+  
+        '400':
+          description: Invalid input
+
+components:
+  schemas:
+    Timetable: 
+      type: object
+      properties:
+        КМБО-02-23:
+          $ref: '#/components/schemas/DaySchedule'
+
+    DaySchedule:
+      type: object
+      properties:
+        ПН:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClassDetails'
+        ВТ:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClassDetails'
+        СР:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClassDetails'
+        ЧТ:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClassDetails'
+        ПТ:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClassDetails'
+        СБ:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClassDetails'
+
+    ClassDetails:
+      type: object
+      properties:
+        Порядок:
+          type: integer
+          description: Порядковый номер пары
+        Пара:
+          type: string
+          description: Название дисциплины
+        Преподаватель:
+          type: string
+          nullable: true
+          description: Имя преподавателя
+        Подгруппа:
+          type: integer
+          nullable: true
+          description: Номер подгруппы
+        Недели:
+          type: array
+          nullable: true
+          items:
+            type: string
+            example: ["1", "7", "12"]
+          description: Недели, на которых проводится пара
+        Четность:
+          type: integer
+          nullable: true
+          description: Четность недели (1 - нечетная, 2 - четная)
+          
+    Success:
+      type: object
+      properties:
+        SUCCESS:
+          type: string
+          
