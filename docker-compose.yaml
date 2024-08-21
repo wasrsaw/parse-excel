@@ -15,8 +15,8 @@ services:
     networks:
       - parser-app
 
-  database:
-    container_name: database
+  parser_database:
+    container_name: ${DB_HOST}
     image: postgres:13
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
@@ -27,6 +27,18 @@ services:
       PGPORT: ${DB_INTERNAL_PORT}
     ports:
       - ${DB_PORT}:${DB_INTERNAL_PORT}
+    networks:
+      - parser-app
+
+  swagger-doc:
+    image: swaggerapi/swagger-ui
+    container_name: swagger-doc
+    ports:
+      - "8099:8080" # Порт swagger документации - 8099
+    environment:
+      SWAGGER_JSON: /swagger.yaml
+    volumes:
+      - ./swagger.yaml:/swagger.yaml
     networks:
       - parser-app
 
