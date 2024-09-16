@@ -52,7 +52,7 @@ async def update_database():
                     # Проверка правильности названия предмета
                     disc = para["Пара"]
                     for subj in info["Предметы"]:
-                        if subj.lower() in disc.lower():
+                        if disc and (subj.lower() in disc.lower()):
                             disc = subj
                             break
                     db.set_subj(disc)
@@ -65,9 +65,13 @@ async def update_database():
                         prep = para["Преподаватель"].split("\n")
                         for fio in prep:
                             for prep_info in info["Преподаватели"]:
-                                if fio.lower() in prep_info["ФИО"].lower():
+                                if fio and (fio.lower() in prep_info["ФИО"].lower()):
                                     preps.append(prep_info["ФИО"])
                                     break
+                            if fio not in preps:
+                                preps.append(fio)
+                                db.set_prep(fio)
+
                     if preps == []:
                         raise PrepNotFound(para["Преподаватель"])
                                 

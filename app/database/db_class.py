@@ -33,7 +33,7 @@ class  Database(BaseDatabase):
 
         CREATE TABLE IF NOT EXISTS sc_prep (
         id SERIAL PRIMARY KEY,
-        fio TEXT NOT NULL,
+        fio TEXT NOT NULL UNIQUE,
         chair TEXT,
         degree TEXT,
         photo TEXT,
