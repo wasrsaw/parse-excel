@@ -20,10 +20,19 @@ someuser@domain:~# git clone https://github.com/wasrsaw/parse-excel.git
 
 Далее собираем и запускаем контейнер всего-лишь одной командой:
 ```
-someuser@domain:~# docker-compose up
+someuser@domain:~# docker-compose up 
+```
+Или запуск в фоновом режиме:
+```
+someuser@domain:~# docker-compose up 
 ```
 
 Документация OpenAPI находится по адресу: http://0.0.0.0:8099
+
+Остановить контейнер следующей командой:
+```
+someuser@domain:~# docker-compose stop
+```
 
 ### Запуск вне контейнера:
 В случае запуска вне контейнера необходмо запустить виртуальную среду и установить все пакеты, используемые сервисом.
